@@ -25,8 +25,11 @@ RUN easy_install \
     coverage \
     nose \
     pep8 \
+    pip \
     pylint \
-    unittest-xml-reporting
+    unittest-xml-reporting \
+    virtualenv \
+    virtualenvwrapper
 
 
 # Clean rootfs from image-builder

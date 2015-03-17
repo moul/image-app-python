@@ -1,4 +1,4 @@
-## -*- docker-image-name: "armbuild/ocs-app-python:trusty" -*-
+## -*- docker-image-name: "armbuild/ocs-app-python:latest" -*-
 FROM armbuild/ocs-distrib-ubuntu:trusty
 MAINTAINER Online Labs <opensource@ocs.online.net> (@online_en)
 
@@ -16,7 +16,17 @@ RUN apt-get -q update                                       \
 	mercurial                                           \
 	subversion                                          \
         python                                              \
+	python-setuptools                                   \
  && apt-get clean
+
+
+# Install common python development libraries
+RUN easy_install \
+    coverage \
+    nose \
+    pep8 \
+    pylint \
+    unittest-xml-reporting
 
 
 # Clean rootfs from image-builder

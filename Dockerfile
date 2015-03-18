@@ -8,15 +8,18 @@ RUN /usr/local/sbin/builder-enter
 
 
 # Install packages
-RUN apt-get -q update                                       \
- && apt-get -y -qq upgrade                                  \
- && apt-get purge -y python.*                               \
- && apt-get -y -qq install                                  \
-	git                                                 \
-	mercurial                                           \
-	subversion                                          \
-        python                                              \
-	python-setuptools                                   \
+RUN apt-get -q update \
+ && apt-get -y -qq upgrade \
+ && apt-get purge -y python.* \
+ && apt-get -y -qq install \
+        emacs vim \
+        git mercurial subversion \
+        python python3 \
+        python-setuptools \
+        libmysqlclient-dev python-dev \
+        libpq-dev \
+        nginx \
+        uwsgi uwsgi-plugin-python \
  && apt-get clean
 
 

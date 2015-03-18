@@ -35,5 +35,8 @@ RUN easy_install \
     virtualenvwrapper
 
 
+ADD ./patches/README.txt /
+RUN ln -s /README.txt /root/
+
 # Clean rootfs from image-builder
 RUN /usr/local/sbin/builder-leave

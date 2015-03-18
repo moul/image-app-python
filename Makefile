@@ -6,6 +6,8 @@ TITLE =			Python
 DESCRIPTION =		Python
 SOURCE_URL =		https://github.com/online-labs/image-app-python
 
+# Forward ports
+SHELL_DOCKER_OPTS ?=    -p 80:80 -p 443:443 -p 8000:8000
 
 ## Image tools  (https://github.com/online-labs/image-tools)
 all:	docker-rules.mk

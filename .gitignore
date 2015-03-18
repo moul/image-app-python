@@ -1,5 +1,6 @@
 docker-rules.mk
 *.built
+*.swp
 *~
 .*~
 *#

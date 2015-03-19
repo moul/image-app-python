@@ -1,4 +1,4 @@
-Official python image on Online Labs
+Official python image on Online Labs [![Build Status](https://travis-ci.org/online-labs/image-app-python.svg?branch=master)](https://travis-ci.org/online-labs/image-app-python)
 ====================================
 
 Scripts to build the official python image on Online Labs

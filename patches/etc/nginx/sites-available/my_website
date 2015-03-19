@@ -1,0 +1,20 @@
+# uWSGI cluster
+upstream uwsgi_cluster {
+    server unix:///run/uwsgi/app/my_django_project/socket;
+}
+
+server {
+    listen 80;
+    server_name your.domain.com;
+
+    # Directory where static files are stored
+    root /var/www/statics;
+
+    # Try to serve static files if exist, otherwise forward to uWSGI
+    try_files $uri @uwsgi;
+
+    location @uwsgi {
+        uwsgi_pass uwsgi_cluster;
+        include uwsgi_params;
+    }
+}

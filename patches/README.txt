@@ -55,6 +55,21 @@ Useful links:
 * nginx configuration: http://wiki.nginx.org/Configuration
 
 
+WHAT'S NOT
+==========
+
+This image doesn't contain databases, because we can't really know which one
+you prefer.
+
+To install MySQL, run:
+
+    $> apt-get install mysql-server
+
+And/or PostgreSQL:
+
+    $> apt-get install postgresql
+
+
 SUGGESTIONS
 ===========
 

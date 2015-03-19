@@ -12,8 +12,8 @@ Common packages have been installed:
 - `virtualenv`, so you can isolate your development environment
 
 
-Also, a web environment is bootstraped so you can deploy your web application
-easily.
+Also, a web environment is bootstrapped so you can deploy your web
+application easily.
 
 
 EXAMPLE: run a Django web application
@@ -25,22 +25,22 @@ application.
 
 First of all, install Django and create your project:
 
-$> pip install django
-$> cd /var/www
-$> django-admin startproject my_django_project
+    $> pip install django
+    $> cd /var/www
+    $> django-admin startproject my_django_project
 
 Then, enable the nginx template to configure the virtualhost:
 
 $> ln -s /etc/nginx/sites-available/my_website /etc/nginx/sites-enabled/
 
-Also, you need to enable the uWSGI tempalte:
+Also, you need to enable the uWSGI template:
 
-$> ln -s /etc/uwsgi/apps-available/my_django_project.ini /etc/uwsgi/apps-enabled/
+    $> ln -s /etc/uwsgi/apps-available/my_django_project.ini /etc/uwsgi/apps-enabled/
 
 Finally, restart services:
 
-$> service uwsgi restart
-$> service nginx restart
+    $> service uwsgi restart
+    $> service nginx restart
 
 And you can open your browser and visit your IP to view your super new website!
 
@@ -50,7 +50,7 @@ a pain to setup a web stack.
 
 Useful links:
 
-* Setup Django with uWSGI and nginx: http://uwsgi-docs.readthedocs.org/en/latest/tutorials/Django_and_nginx.html
+* Setup Django with uWSGI and nginx:http://uwsgi-docs.readthedocs.org/en/latest/tutorials/Django_and_nginx.html
 * Options of uWSGI configuration files: http://uwsgi-docs.readthedocs.org/en/latest/Options.html
 * nginx configuration: http://wiki.nginx.org/Configuration
 

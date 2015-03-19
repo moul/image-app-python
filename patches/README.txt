@@ -31,7 +31,7 @@ First of all, install Django and create your project:
 
 Then, enable the nginx template to configure the virtualhost:
 
-$> ln -s /etc/nginx/sites-available/my_website /etc/nginx/sites-enabled/
+    $> ln -s /etc/nginx/sites-available/my_website /etc/nginx/sites-enabled/
 
 Also, you need to enable the uWSGI template:
 

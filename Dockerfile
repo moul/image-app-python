@@ -1,6 +1,6 @@
-## -*- docker-image-name: "armbuild/ocs-app-python:latest" -*-
-FROM armbuild/ocs-distrib-ubuntu:trusty
-MAINTAINER Online Labs <opensource@ocs.online.net> (@online_en)
+## -*- docker-image-name: "armbuild/scw-app-python:latest" -*-
+FROM armbuild/scw-distrib-ubuntu:trusty
+MAINTAINER Scaleway <opensource@scaleway.com> (@scaleway)
 
 
 # Prepare rootfs for image-builder
@@ -38,14 +38,18 @@ RUN easy_install \
 ADD ./patches/README.txt /
 RUN ln -s /README.txt /root/
 
+
 # Create templates to deploy a web environment easily
 RUN mkdir /var/www
 RUN chown www-data:www-data /var/www
 
+
 ADD ./patches/etc/nginx/sites-available/my_website /etc/nginx/sites-available/
 RUN rm /etc/nginx/sites-enabled/default
 
+
 ADD ./patches/etc/uwsgi/apps-available/my_django_project.ini /etc/uwsgi/apps-available/
+
 
 # Clean rootfs from image-builder
 RUN /usr/local/sbin/builder-leave
